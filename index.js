@@ -1,9 +1,6 @@
-const express = require("express");
-const app = express();
+var express = require("express");
+var app = express();
 
-app.listen(3000, () => {
-    console.log("El servidor está inicializado en el puerto 3000");
-});
 app.get('/', (req, res) => res.send("Hola mundo API de caracteristicas del comercio"));
 
 app.get('/caracteristicas', (req, res) => {
@@ -139,4 +136,8 @@ app.get('/caracteristicas', (req, res) => {
         }
     ];
     res.json(caracteristicas);
+});
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("El servidor está inicializado en el puerto 3000");
 });
